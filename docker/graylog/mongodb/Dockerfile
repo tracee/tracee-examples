@@ -5,4 +5,4 @@
 FROM dockerfile/mongodb
 MAINTAINER Daniel Wegener "daniel.wegener@holisticon.de"
 
-ENTRYPOINT ["mongod","--smallfiles", "--rest"]
+CMD ["mongod","--smallfiles", "--rest", "--noprealloc"]

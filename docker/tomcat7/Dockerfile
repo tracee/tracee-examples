@@ -11,7 +11,8 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN cd / && wget -q http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.52/bin/apache-tomcat-7.0.52.tar.gz \
  && tar -xf apache-tomcat-7.0.52.tar.gz && rm apache-tomcat-7.0.52.tar.gz \
  && ln -s apache-tomcat-7.0.52 apache-tomcat \
- && rm -rf /apache-tomcat/webapps/examples
+ && rm -rf /apache-tomcat/webapps/* \
+ && rm -rf /apache-tomcat/server/webapps/*
 
 # Enable Tomcat remote debugging
 ENV JPDA_ADDRESS 8000
@@ -33,7 +34,7 @@ ADD http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/0.9.30/logback-
 ADD http://repo1.maven.org/maven2/ch/qos/logback/logback-core/0.9.30/logback-core-0.9.30.jar $CATALINA_HOME/lib/
 
 # Add logstash gelf appender
-ADD http://repo1.maven.org/maven2/biz/paluch/logging/logstash-gelf/1.3.2/logstash-gelf-1.3.2.jar $CATALINA_HOME/lib/
+ADD http://repo1.maven.org/maven2/biz/paluch/logging/logstash-gelf/1.5.4/logstash-gelf-1.5.4.jar $CATALINA_HOME/lib/
 ADD http://repo1.maven.org/maven2/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar $CATALINA_HOME/lib/
 
 # Add jax-rs 2 api
@@ -52,11 +53,11 @@ ADD tomcat-users.xml $CATALINA_HOME/conf/
 
 EXPOSE 8000 8080
 
-ENTRYPOINT export CATALINA_OPTS="$CATALINA_OPTS -DGRAYLOG_UDP_ADDR=$GRAYLOG_PORT_12201_UDP_ADDR -DGRAYLOG_UDP_PORT=$GRAYLOG_PORT_12201_UDP_PORT" \
- && env \
- && ifconfig \
+ENTRYPOINT export CATALINA_OPTS="$CATALINA_OPTS -Xms128m -Xmx256m -DGRAYLOG_UDP_ADDR=$GRAYLOG_PORT_12201_UDP_ADDR -DGRAYLOG_UDP_PORT=$GRAYLOG_PORT_12201_UDP_PORT" \
+# && env \
+# && ifconfig \
  && /apache-tomcat/bin/catalina.sh run
 
 # Download and install latest tracee snapshot artifacts
-ADD https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=io.tracee.examples&a=tracee-examples-springmvc&e=war&v=LATEST $CATALINA_HOME/webapps/tracee-examples-springmvc.war
-ADD https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=io.tracee.examples&a=tracee-examples-jaxrs2&e=war&v=LATEST $CATALINA_HOME/webapps/tracee-examples-jaxrs2.war
+ADD tracee-examples-springmvc.war $CATALINA_HOME/webapps/tracee-examples-springmvc.war
+ADD tracee-examples-jaxrs2.war $CATALINA_HOME/webapps/tracee-examples-jaxrs2.war

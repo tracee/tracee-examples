@@ -42,6 +42,12 @@
 			<version>2.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+			<version>2.4.4</version>
+		</dependency>
+
         <dependency>
             <groupId>io.tracee.backend</groupId>
             <artifactId>tracee-slf4j</artifactId>

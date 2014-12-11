@@ -18,7 +18,8 @@ run `./startEnvironment.sh`
 
 After starting all services, you may browse the following web endpoints:
 
- * [http://localhost:8080/](http://localhost:8080/) - tomcat7
+ * [http://localhost:8080/](http://localhost:8080/tracee-examples-jaxrs2) - tracee-examples-jaxrs2 on tomcat7
+ * [http://localhost:8080/](http://localhost:8080/tracee-examples-springmvc/token) - tracee-examples-springmvc on tomcat7
  * [http://localhost:8081/](http://localhost:8081/) - jbossas7
  * [http://localhost:9990/](http://localhost:9990/) - jbossas7 - management interface
  * [http://localhost:9000/](http://localhost:9000/) - graylog-web

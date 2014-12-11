@@ -10,10 +10,9 @@
 		<facility>tomcat7</facility>
 		<extractStackTrace>true</extractStackTrace>
 		<filterStackTrace>true</filterStackTrace>
-		<mdcProfiling>true</mdcProfiling>
 		<timestampPattern>yyyy-MM-dd HH:mm:ss,SSSS</timestampPattern>
 		<maximumMessageSize>8192</maximumMessageSize>
-		<dynamicMdcFields>TracEE-.*</dynamicMdcFields>
+		<mdcFields>traceeRequestId,traceeSessionId</mdcFields>
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
 			<level>INFO</level>
 		</filter>
@@ -23,7 +22,7 @@
 		<!-- encoders are assigned the type
 			 ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
 		<encoder>
-			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} %X{traceeRequestId} - %msg%n</pattern>
 		</encoder>
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
 			<level>INFO</level>

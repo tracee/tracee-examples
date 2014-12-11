@@ -5,14 +5,15 @@
 FROM dockerfile/java
 MAINTAINER Daniel Wegener "daniel.wegener@holisticon.de"
 
+ENV GLW_PKG_NAME graylog2-web-interface-0.92.0
 ENV DEBIAN_FRONTEND noninteractive
 
 # Download and install Greylog
-RUN cd / && wget -q https://github.com/Graylog2/graylog2-web-interface/releases/download/0.20.1/graylog2-web-interface-0.20.1.tgz \
- && tar xvfz graylog2-web-interface-0.20.1.tgz && rm graylog2-web-interface-0.20.1.tgz \
- && ln -s graylog2-web-interface-0.20.1 graylog2-web-interface
+RUN cd / && wget -q http://packages.graylog2.org/releases/graylog2-web-interface/$GLW_PKG_NAME.tgz \
+ && tar xvfz $GLW_PKG_NAME.tgz && rm $GLW_PKG_NAME.tgz \
+ && mv $GLW_PKG_NAME graylog2-web-interface
 
-ENV GRAYLOG2_WEB_HOME /graylog2-web-interface-0.20.1
+ENV GRAYLOG2_WEB_HOME /graylog2-web-interface
 ADD graylog2-web-interface.conf $GRAYLOG2_WEB_HOME/conf/
 
 EXPOSE 9000
@@ -20,7 +21,7 @@ EXPOSE 9000
 # Reduce initial heap space from 1024m default.
 ENV JAVA_OPTS -Xms256m
 
-ENTRYPOINT env \
+ENTRYPOINT export HOST_ADDR=`hostname --ip-address` \
  && cd /graylog2-web-interface/ \
  && sed -i "s/GRAYLOG_PORT_12900_TCP_ADDR/$GRAYLOG_PORT_12900_TCP_ADDR/g" "/graylog2-web-interface/conf/graylog2-web-interface.conf" \
  && sed -i "s/GRAYLOG_PORT_12900_TCP_PORT/$GRAYLOG_PORT_12900_TCP_PORT/g" "/graylog2-web-interface/conf/graylog2-web-interface.conf" \
