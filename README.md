@@ -1,4 +1,4 @@
-> This document contains documentation for TracEE examples. Click [here](/README.md) to get an overview that TracEE is about.
+> This document contains documentation for TracEE examples. Visit our [main repository](https://github.com/tracee/tracee) to get an overview what TracEE is about.
 
 # tracee-examples
 
