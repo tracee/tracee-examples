@@ -109,25 +109,25 @@
         <dependency>
             <groupId>io.tracee</groupId>
             <artifactId>tracee-api</artifactId>
-            <version>${project.version}</version>
+            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.tracee.backend</groupId>
             <artifactId>tracee-slf4j</artifactId>
-            <version>${project.version}</version>
+            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.tracee</groupId>
             <artifactId>tracee-jaxws</artifactId>
-            <version>${project.version}</version>
+            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.tracee.inbound</groupId>
             <artifactId>tracee-servlet</artifactId>
-            <version>${project.version}</version>
+            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
@@ -139,19 +139,19 @@
         <dependency>
             <groupId>io.tracee.contextlogger</groupId>
             <artifactId>tracee-context-logger-http-connector</artifactId>
-            <version>${project.version}</version>
+            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.tracee.contextlogger</groupId>
             <artifactId>tracee-context-logger-impl</artifactId>
-            <version>${project.version}</version>
+            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.tracee.contextlogger</groupId>
             <artifactId>tracee-context-logger-servlet</artifactId>
-            <version>${project.version}</version>
+            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
