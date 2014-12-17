@@ -27,7 +27,7 @@
 
 	<properties>
 		<!-- TracEE Version -->
-		<tracee.version>0.6.0-SNAPSHOT</tracee.version>
+		<tracee.version>0.6.0</tracee.version>
 
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
