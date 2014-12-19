@@ -90,7 +90,7 @@
         <dependency>
             <groupId>io.tracee.contextlogger</groupId>
             <artifactId>tracee-context-logger-watchdog</artifactId>
-            <version>${tracee.version}</version>
+            <version>${tracee.contextlogger.version}</version>
         </dependency>
 
 

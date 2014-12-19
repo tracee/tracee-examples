@@ -72,7 +72,7 @@
         <dependency>
             <groupId>io.tracee.contextlogger</groupId>
             <artifactId>tracee-context-logger-jaxws</artifactId>
-            <version>${tracee.version}</version>
+            <version>${tracee.contextlogger.version}</version>
         </dependency>
 
         <dependency>
