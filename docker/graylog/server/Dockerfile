@@ -1,16 +1,17 @@
-# JBoss7 with deployed tracee-examples-jaxws and tracee-examples-ejb
+# graylog2-server
 #
 # VERSION       1.0
 
 FROM dockerfile/java
 MAINTAINER Daniel Wegener "daniel.wegener@holisticon.de"
 
+ENV GL_PKG_NAME graylog2-server-0.92.0
 ENV DEBIAN_FRONTEND noninteractive
 
 # Download and install Greylog
-RUN cd / && wget -q https://github.com/Graylog2/graylog2-server/releases/download/0.20.1/graylog2-server-0.20.1.tgz \
-&& tar xvfz graylog2-server-0.20.1.tgz && rm graylog2-server-0.20.1.tgz \
-&& ln -s graylog2-server-0.20.1 graylog2-server
+RUN cd / && wget -q http://packages.graylog2.org/releases/graylog2-server/$GL_PKG_NAME.tgz \
+ && tar xvfz $GL_PKG_NAME.tgz && rm $GL_PKG_NAME.tgz \
+ && mv $GL_PKG_NAME graylog2-server
 
 ADD graylog2.conf /etc/
 
@@ -24,4 +25,4 @@ ENTRYPOINT export HOST_ADDR=`hostname --ip-address` \
   && sed -i "s/ELASTICSEARCH_HOST/$ELASTICSEARCH_PORT_9300_TCP_ADDR/g" "/etc/graylog2.conf" \
   && sed -i "s/ELASTICSEARCH_PORT/$ELASTICSEARCH_PORT_9300_TCP_PORT/g" "/etc/graylog2.conf" \
   && env && ifconfig && cd /graylog2-server/ \
-  && java -jar graylog2-server.jar --debug
+  && java -jar graylog2-server.jar

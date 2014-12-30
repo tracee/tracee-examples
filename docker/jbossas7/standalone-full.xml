@@ -61,7 +61,7 @@
             <console-handler name="CONSOLE">
                 <level name="INFO"/>
                 <formatter>
-                    <pattern-formatter pattern="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n"/>
+                    <pattern-formatter pattern="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %X{traceeRequestId} %s%E%n"/>
                 </formatter>
             </console-handler>
             <periodic-rotating-file-handler name="FILE">
@@ -103,10 +103,10 @@
 					<property name="facility" value="java-test" />
 					<property name="extractStackTrace" value="true" />
 					<property name="filterStackTrace" value="true" />
-					<property name="mdcProfiling" value="true" />
 					<property name="timestampPattern" value="yyyy-MM-dd HH:mm:ss,SSSS" />
 					<property name="maximumMessageSize" value="8192" />
-					<property name="dynamicMdcFields" value="TracEE-.*" />
+					<!--<property name="includeFullMDC" value="true" />-->
+					<property name="mdcFields" value="traceeRequestId,traceeSessionId" />
 				</properties>
 			</custom-handler>
         </subsystem>
@@ -400,7 +400,7 @@
         <interface name="unsecure">
             <!--
               ~  Used for IIOP sockets in the standard configuration.
-              ~                  To secure JacORB you need to setup SSL 
+              ~                  To secure JacORB you need to setup SSL
               -->
             <inet-address value="${jboss.bind.address.unsecure:127.0.0.1}"/>
         </interface>

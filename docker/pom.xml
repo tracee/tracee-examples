@@ -54,15 +54,34 @@
 						<id>copy</id>
 						<phase>package</phase>
 						<goals>
-							<goal>copy-dependencies</goal>
+							<goal>copy</goal>
 						</goals>
 						<configuration>
-							<useSubDirectoryPerType>true</useSubDirectoryPerType>
+							<artifactItems>
+								<artifactItem>
+									<groupId>io.tracee.examples</groupId>
+									<artifactId>tracee-examples-springmvc</artifactId>
+									<version>${project.version}</version>
+									<type>war</type>
+									<outputDirectory>${project.basedir}/tomcat7</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>io.tracee.examples</groupId>
+									<artifactId>tracee-examples-jaxrs2</artifactId>
+									<version>${project.version}</version>
+									<type>war</type>
+									<outputDirectory>${project.basedir}/tomcat7</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>io.tracee.examples</groupId>
+									<artifactId>tracee-examples-ear</artifactId>
+									<version>${project.version}</version>
+									<type>ear</type>
+									<outputDirectory>${project.basedir}/jbossas7</outputDirectory>
+								</artifactItem>
+							</artifactItems>
 							<stripVersion>true</stripVersion>
-							<outputDirectory>${project.build.directory}</outputDirectory>
 							<overWriteIfNewer>true</overWriteIfNewer>
-							<excludeTransitive>true</excludeTransitive>
-							<includeScope>runtime</includeScope>
 						</configuration>
 					</execution>
 				</executions>

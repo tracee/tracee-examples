@@ -73,6 +73,11 @@
             <artifactId>tracee-springmvc</artifactId>
             <version>${tracee.version}</version>
         </dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<scope>compile</scope>
+		</dependency>
 
         <dependency>
             <groupId>io.tracee.examples</groupId>
