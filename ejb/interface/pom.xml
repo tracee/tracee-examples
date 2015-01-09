@@ -6,8 +6,9 @@
 
     <parent>
         <groupId>io.tracee.examples</groupId>
-        <artifactId>tracee-examples-ejb</artifactId>
+        <artifactId>tracee-examples</artifactId>
         <version>0.6.0-SNAPSHOT</version>
+		<relativePath>../../pom.xml</relativePath>
     </parent>
 
     <name>tracee-examples-ejb-interface</name>

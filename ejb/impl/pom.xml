@@ -6,8 +6,9 @@
 
     <parent>
         <groupId>io.tracee.examples</groupId>
-        <artifactId>tracee-examples-ejb</artifactId>
+        <artifactId>tracee-examples</artifactId>
         <version>0.6.0-SNAPSHOT</version>
+		<relativePath>../../pom.xml</relativePath>
     </parent>
 
 	<properties />
@@ -79,7 +80,7 @@
         </dependency>
 
         <dependency>
-            <groupId>io.tracee</groupId>
+            <groupId>io.tracee.binding</groupId>
             <artifactId>tracee-jaxws</artifactId>
             <version>${tracee.version}</version>
         </dependency>

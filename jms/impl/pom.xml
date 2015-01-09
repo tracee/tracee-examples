@@ -9,6 +9,7 @@
         <groupId>io.tracee.examples</groupId>
         <artifactId>tracee-examples-jms</artifactId>
         <version>0.6.0-SNAPSHOT</version>
+		<relativePath>../../pom.xml</relativePath>
     </parent>
 
     <name>tracee-examples-jms-impl</name>
@@ -40,7 +41,7 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>io.tracee</groupId>
+			<groupId>io.tracee.binding</groupId>
 			<artifactId>tracee-jms</artifactId>
 			<version>${tracee.version}</version>
 		</dependency>

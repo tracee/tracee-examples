@@ -69,7 +69,7 @@
         </dependency>
 
         <dependency>
-            <groupId>io.tracee.inbound</groupId>
+            <groupId>io.tracee.binding</groupId>
             <artifactId>tracee-springmvc</artifactId>
             <version>${tracee.version}</version>
         </dependency>

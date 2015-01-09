@@ -5,14 +5,16 @@
 	<artifactId>tracee-examples</artifactId>
 	<groupId>io.tracee.examples</groupId>
 	<packaging>pom</packaging>
-	<version>0.6.0-SNAPSHOT</version>
+	<version>0.7.0-SNAPSHOT</version>
 
 	<modules>
 		<module>jaxws</module>
 		<module>webapp</module>
 		<module>jaxrs2</module>
-		<module>ejb</module>
-		<module>jms</module>
+		<module>ejb/interface</module>
+		<module>ejb/impl</module>
+		<module>jms/api</module>
+		<module>jms/impl</module>
 		<module>springmvc</module>
 		<module>springaop</module>
 		<module>ear</module>
@@ -27,7 +29,7 @@
 
 	<properties>
 		<!-- TracEE Version -->
-		<tracee.version>0.6.0</tracee.version>
+		<tracee.version>0.7.0</tracee.version>
 		<tracee.contextlogger.version>0.5.0</tracee.contextlogger.version>
 
 
