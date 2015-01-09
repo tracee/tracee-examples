@@ -48,7 +48,7 @@
 
 		<!-- tracee related dependencies -->
 		<dependency>
-			<groupId>io.tracee</groupId>
+			<groupId>io.tracee.binding</groupId>
 			<artifactId>tracee-jms</artifactId>
 		</dependency>
 

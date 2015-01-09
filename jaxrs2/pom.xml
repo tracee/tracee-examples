@@ -56,7 +56,7 @@
         </dependency>
 
         <dependency>
-            <groupId>io.tracee</groupId>
+            <groupId>io.tracee.binding</groupId>
             <artifactId>tracee-jaxrs2</artifactId>
         </dependency>
 

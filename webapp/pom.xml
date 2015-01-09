@@ -120,12 +120,12 @@
         </dependency>
 
         <dependency>
-            <groupId>io.tracee</groupId>
+            <groupId>io.tracee.binding</groupId>
             <artifactId>tracee-jaxws</artifactId>
         </dependency>
 
         <dependency>
-			<groupId>io.tracee.inbound</groupId>
+			<groupId>io.tracee.binding</groupId>
 			<artifactId>tracee-servlet</artifactId>
 		</dependency>
 
