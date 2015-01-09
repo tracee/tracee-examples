@@ -64,28 +64,6 @@
 					<skip>true</skip>
 				</configuration>
 			</plugin>
-			<!-- Examples are not so restrictive like the api modules of tracee -->
-			<plugin>
-				<artifactId>maven-enforcer-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>enforce</id>
-						<goals>
-							<goal>enforce</goal>
-						</goals>
-						<configuration>
-							<rules>
-								<bannedDependencies>
-									<searchTransitive>false</searchTransitive>
-									<includes>
-										<include>*</include>
-									</includes>
-								</bannedDependencies>
-							</rules>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -147,10 +125,6 @@
 				<plugin>
 					<artifactId>maven-site-plugin</artifactId>
 					<version>3.3</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-enforcer-plugin</artifactId>
-					<version>1.3.1</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-project-info-reports-plugin</artifactId>
