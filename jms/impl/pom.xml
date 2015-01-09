@@ -29,32 +29,35 @@
 
 	<dependencies>
 
+		<!-- external dependencies -->
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
-			<version>6.0</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>io.tracee.examples</groupId>
-			<artifactId>tracee-examples-jms-api</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.tracee.binding</groupId>
-			<artifactId>tracee-jms</artifactId>
-			<version>${tracee.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.tracee.contextlogger</groupId>
-			<artifactId>tracee-context-logger-javaee</artifactId>
-			<version>${tracee.contextlogger.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
+
+		<!-- internal dependencies -->
+		<dependency>
+			<groupId>io.tracee.examples</groupId>
+			<artifactId>tracee-examples-jms-api</artifactId>
+		</dependency>
+
+		<!-- tracee related dependencies -->
+		<dependency>
+			<groupId>io.tracee</groupId>
+			<artifactId>tracee-jms</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.tracee.contextlogger</groupId>
+			<artifactId>contextlogger-javaee</artifactId>
+		</dependency>
+
+
 	</dependencies>
 
 </project>

@@ -14,24 +14,26 @@
     <description>Please refer to https://github.com/tracee/tracee.</description>
 
     <dependencies>
-        <dependency>
-            <groupId>io.tracee.examples</groupId>
-            <artifactId>tracee-examples-ejb-impl</artifactId>
-            <version>${project.version}</version>
-            <type>ejb</type>
-        </dependency>
-        <dependency>
-            <groupId>io.tracee.examples</groupId>
-            <artifactId>tracee-examples-jaxws-service</artifactId>
-            <version>${project.version}</version>
-            <type>ejb</type>
-        </dependency>
-        <dependency>
-            <groupId>io.tracee.examples</groupId>
-            <artifactId>tracee-examples-jms-impl</artifactId>
-            <version>${project.version}</version>
-            <type>ejb</type>
-        </dependency>
+		<dependency>
+			<groupId>io.tracee.examples</groupId>
+			<artifactId>tracee-examples-ejb-impl</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>io.tracee.examples</groupId>
+			<artifactId>tracee-examples-jaxws-service</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>io.tracee.examples</groupId>
+			<artifactId>tracee-examples-jms-impl</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
     </dependencies>
 
     <build>

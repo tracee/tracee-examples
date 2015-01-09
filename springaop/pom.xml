@@ -13,14 +13,6 @@
     <name>tracee-examples-springaop</name>
     <description>Please refer to https://github.com/tracee/tracee.</description>
 
-
-    <properties>
-        <!-- Spring -->
-        <spring-framework.version>4.0.2.RELEASE</spring-framework.version>
-        <aspectj.version>1.7.4</aspectj.version>
-
-</properties>
-
     <build>
 		<finalName>tracee-springaop-example</finalName>
         <plugins>
@@ -40,15 +32,16 @@
 
     <dependencies>
 
+		<!-- external dependencies-->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
-			<version>1.2</version>
 		</dependency>
 
 		<dependency>
@@ -57,46 +50,8 @@
 			<scope>compile</scope>
 		</dependency>
 
-        <dependency>
-            <groupId>io.tracee.examples</groupId>
-            <artifactId>tracee-examples-ejb-interface</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.tracee</groupId>
-            <artifactId>tracee-api</artifactId>
-            <version>${tracee.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.tracee.backend</groupId>
-            <artifactId>tracee-slf4j</artifactId>
-            <version>${tracee.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.tracee.binding</groupId>
-            <artifactId>tracee-springmvc</artifactId>
-            <version>${tracee.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.tracee.examples</groupId>
-            <artifactId>tracee-examples-jaxws-client</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.tracee.contextlogger</groupId>
-            <artifactId>tracee-context-logger-watchdog</artifactId>
-            <version>${tracee.contextlogger.version}</version>
-        </dependency>
-
-
-
-        <!-- UNCOMMENT THIS IF YOU WANT TO DEPLOY IT TO A PLAIN TOMCAT -->
-        <!--
+		<!-- UNCOMMENT THIS IF YOU WANT TO DEPLOY IT TO A PLAIN TOMCAT -->
+		<!--
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
@@ -104,43 +59,79 @@
         </dependency>
         -->
 
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<!-- UNCOMMENT THIS IF YOU WANT TO DEPLOY IT TO A PLAIN TOMCAT -->
+			<!--<scope>compile</scope>-->
+		</dependency>
+
+		<!-- Spring AOP and AspectJ related dependencies -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+
+
+
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+		</dependency>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <!-- UNCOMMENT THIS IF YOU WANT TO DEPLOY IT TO A PLAIN TOMCAT -->
-            <!--<scope>compile</scope>-->
+            <groupId>io.tracee.contextlogger</groupId>
+            <artifactId>tracee-context-logger-watchdog</artifactId>
+            <version>${tracee.contextlogger.version}</version>
         </dependency>
 
-        <!-- Spring AOP and AspectJ related dependencies -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+		</dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
+		<!-- internal dependencies -->
+		<dependency>
+			<groupId>io.tracee.examples</groupId>
+			<artifactId>tracee-examples-ejb-interface</artifactId>
+		</dependency>
 
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <version>${aspectj.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>io.tracee.examples</groupId>
+			<artifactId>tracee-examples-jaxws-client</artifactId>
+		</dependency>
 
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>${aspectj.version}</version>
-        </dependency>
+		<!-- tracee related dependencies -->
+		<dependency>
+			<groupId>io.tracee</groupId>
+			<artifactId>tracee-api</artifactId>
+		</dependency>
 
-        <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib-nodep</artifactId>
-            <version>3.1</version>
-        </dependency>
+		<dependency>
+			<groupId>io.tracee.backend</groupId>
+			<artifactId>tracee-slf4j</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.tracee.inbound</groupId>
+			<artifactId>tracee-springmvc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.tracee.contextlogger</groupId>
+			<artifactId>contextlogger-watchdog</artifactId>
+		</dependency>
+
 
     </dependencies>
 </project>

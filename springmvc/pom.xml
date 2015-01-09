@@ -33,11 +33,13 @@
 
     <dependencies>
 
+		<!-- external dependencies-->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -50,29 +52,31 @@
 			<scope>compile</scope>
 		</dependency>
 
-        <dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<!-- internal dependencies -->
+		<dependency>
             <groupId>io.tracee.examples</groupId>
             <artifactId>tracee-examples-ejb-interface</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.tracee</groupId>
             <artifactId>tracee-api</artifactId>
-            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.tracee.backend</groupId>
             <artifactId>tracee-slf4j</artifactId>
-            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>io.tracee.binding</groupId>
-            <artifactId>tracee-springmvc</artifactId>
-            <version>${tracee.version}</version>
-        </dependency>
+			<groupId>io.tracee.inbound</groupId>
+			<artifactId>tracee-springmvc</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -82,12 +86,8 @@
         <dependency>
             <groupId>io.tracee.examples</groupId>
             <artifactId>tracee-examples-jaxws-client</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
+
     </dependencies>
 </project>
