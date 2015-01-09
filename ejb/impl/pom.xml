@@ -54,52 +54,50 @@
     </build>
 
     <dependencies>
+
+		<!-- external dependencies -->
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
-            <version>6.0</version>
-            <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>io.tracee.examples</groupId>
-            <artifactId>tracee-examples-ejb-interface</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
 
+		<!-- internal dependencies -->
+		<dependency>
+			<groupId>io.tracee.examples</groupId>
+			<artifactId>tracee-examples-ejb-interface</artifactId>
+		</dependency>
+
+		<!-- tracee related dependencies -->
         <dependency>
             <groupId>io.tracee</groupId>
             <artifactId>tracee-api</artifactId>
-            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.tracee.backend</groupId>
             <artifactId>tracee-slf4j</artifactId>
-            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>io.tracee.binding</groupId>
+            <groupId>io.tracee</groupId>
             <artifactId>tracee-jaxws</artifactId>
-            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.tracee.contextlogger</groupId>
-            <artifactId>tracee-context-logger-watchdog</artifactId>
-            <version>${tracee.contextlogger.version}</version>
+            <artifactId>contextlogger-watchdog</artifactId>
         </dependency>
 
-        <dependency>
+		<dependency>
             <groupId>io.tracee.contextlogger</groupId>
-            <artifactId>tracee-context-logger-javaee</artifactId>
-            <version>${tracee.contextlogger.version}</version>
+            <artifactId>contextlogger-javaee</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
+
     </dependencies>
 </project>

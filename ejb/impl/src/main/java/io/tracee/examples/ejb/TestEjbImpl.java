@@ -1,18 +1,18 @@
 package io.tracee.examples.ejb;
 
-import io.tracee.contextlogger.javaee.TraceeEjbErrorContextLoggingInterceptor;
-import io.tracee.contextlogger.watchdog.Watchdog;
+import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ejb.Stateless;
-import javax.interceptor.Interceptors;
+import io.tracee.contextlogger.javaee.TraceeErrorContextLoggingInterceptor;
+import io.tracee.contextlogger.watchdog.Watchdog;
 
 @Stateless
 public class TestEjbImpl implements TestEjb {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TestEjbImpl.class);
-
 
     @Override
     public int multiply(final int mul1, final int mul2) {
@@ -27,7 +27,7 @@ public class TestEjbImpl implements TestEjb {
     }
 
     @Override
-    @Interceptors({ TraceeEjbErrorContextLoggingInterceptor.class })
+    @Interceptors({ TraceeErrorContextLoggingInterceptor.class })
     public int error(final int a, final int b) {
         LOGGER.info("trigger NullPointerException with parameters {} and {}", a, b);
         return watchdogError(a, b);
