@@ -231,13 +231,13 @@
 			</dependency>
 
 			<dependency>
-				<groupId>io.tracee.binding</groupId>
+				<groupId>io.tracee.inbound</groupId>
 				<artifactId>tracee-springmvc</artifactId>
 				<version>${tracee.version}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>io.tracee.binding</groupId>
+				<groupId>io.tracee</groupId>
 				<artifactId>tracee-jms</artifactId>
 				<version>${tracee.version}</version>
 			</dependency>
