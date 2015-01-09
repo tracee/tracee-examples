@@ -88,8 +88,5 @@
             <groupId>io.tracee.binding</groupId>
             <artifactId>tracee-jaxws</artifactId>
         </dependency>
-
-
-
     </dependencies>
 </project>

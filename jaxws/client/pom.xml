@@ -13,7 +13,6 @@
 
 	<description>Please refer to https://github.com/tracee/tracee.</description>
 
-
     <build>
         <finalName>traceeTestServiceClient</finalName>
         <plugins>
@@ -62,10 +61,6 @@
 			<scope>compile</scope>
 		</dependency>
 
-
-		<!-- internal dependencies -->
-
-
 		<!-- tracee related dependencies -->
         <dependency>
             <groupId>io.tracee</groupId>
@@ -82,15 +77,9 @@
 			<artifactId>tracee-jaxws</artifactId>
 		</dependency>
 
-
         <dependency>
             <groupId>io.tracee.contextlogger</groupId>
             <artifactId>contextlogger-jaxws</artifactId>
         </dependency>
-
-
-
     </dependencies>
-
-
 </project>
