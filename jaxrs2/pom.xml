@@ -23,12 +23,13 @@
     </build>
 
     <dependencies>
+
+		<!-- external dependencies -->
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
-			<version>6.0</version>
-			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>
@@ -37,11 +38,12 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.glassfish.jersey.containers</groupId>
-			<artifactId>jersey-container-servlet</artifactId>
-			<version>2.0</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
 		</dependency>
 
+
+		<!-- tracee related dependencies -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.jaxrs</groupId>
 			<artifactId>jackson-jaxrs-json-provider</artifactId>
@@ -51,18 +53,13 @@
         <dependency>
             <groupId>io.tracee.backend</groupId>
             <artifactId>tracee-slf4j</artifactId>
-            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>io.tracee.binding</groupId>
+            <groupId>io.tracee</groupId>
             <artifactId>tracee-jaxrs2</artifactId>
-            <version>${tracee.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
+
     </dependencies>
 </project>

@@ -48,41 +48,47 @@
     </build>
 
     <dependencies>
+
+		<!-- external dependencies -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+
+		<!-- internal dependencies -->
+
+
+		<!-- tracee related dependencies -->
         <dependency>
             <groupId>io.tracee</groupId>
             <artifactId>tracee-api</artifactId>
-            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.tracee.backend</groupId>
             <artifactId>tracee-slf4j</artifactId>
-            <version>${tracee.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>io.tracee.binding</groupId>
-            <artifactId>tracee-jaxws</artifactId>
-            <version>${tracee.version}</version>
-        </dependency>
+			<groupId>io.tracee</groupId>
+			<artifactId>tracee-jaxws</artifactId>
+		</dependency>
 
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <scope>compile</scope>
-        </dependency>
 
         <dependency>
             <groupId>io.tracee.contextlogger</groupId>
-            <artifactId>tracee-context-logger-jaxws</artifactId>
-            <version>${tracee.contextlogger.version}</version>
+            <artifactId>contextlogger-jaxws</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <scope>compile</scope>
-        </dependency>
+
 
     </dependencies>
 
