@@ -2,7 +2,7 @@ package io.tracee.examples.webapp;
 
 import io.tracee.examples.jaxws.client.testclient.TraceeJaxWsTestService;
 import io.tracee.examples.jaxws.client.testclient.TraceeJaxWsTestWS;
-import io.tracee.jaxws.client.TraceeClientHandlerResolver;
+import io.tracee.binding.jaxws.TraceeClientHandlerResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

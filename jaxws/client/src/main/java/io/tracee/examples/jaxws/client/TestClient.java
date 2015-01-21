@@ -7,8 +7,7 @@ import io.tracee.TraceeConstants;
 import io.tracee.TraceeLogger;
 import io.tracee.examples.jaxws.client.testclient.TraceeJaxWsTestService;
 import io.tracee.examples.jaxws.client.testclient.TraceeJaxWsTestWS;
-import io.tracee.jaxws.client.TraceeClientHandler;
-import org.slf4j.LoggerFactory;
+import io.tracee.binding.jaxws.TraceeClientHandler;
 import org.slf4j.MDC;
 import io.tracee.contextlogger.jaxws.container.TraceeClientHandlerResolver;
 

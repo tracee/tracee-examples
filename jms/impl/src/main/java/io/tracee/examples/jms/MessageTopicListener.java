@@ -1,7 +1,7 @@
 package io.tracee.examples.jms;
 
 import io.tracee.contextlogger.javaee.TraceeJmsErrorMessageListener;
-import io.tracee.jms.TraceeMessageListener;
+import io.tracee.binding.jms.TraceeMessageListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

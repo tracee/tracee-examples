@@ -1,6 +1,6 @@
 package io.tracee.examples.jms;
 
-import io.tracee.jms.TraceeMessageWriter;
+import io.tracee.binding.jms.TraceeMessageWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
