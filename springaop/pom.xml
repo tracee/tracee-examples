@@ -124,8 +124,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>io.tracee.contextlogger</groupId>
-			<artifactId>contextlogger-watchdog</artifactId>
+			<groupId>io.tracee.contextlogger.contextprovider</groupId>
+			<artifactId>contextprovider-aspectj</artifactId>
 		</dependency>
 
 

@@ -1,29 +1,27 @@
 package io.tracee.examples.jms;
 
-import io.tracee.contextlogger.javaee.TraceeJmsErrorMessageListener;
-import io.tracee.binding.jms.TraceeMessageListener;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
 import javax.interceptor.Interceptors;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 
-@MessageDriven(activationConfig = {
-		@ActivationConfigProperty(
-				propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
-		@ActivationConfigProperty(
-				propertyName = "destination", propertyValue = "exampleQueue")})
-@Interceptors({TraceeMessageListener.class, TraceeJmsErrorMessageListener.class})
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import io.tracee.binding.jms.TraceeMessageListener;
+import io.tracee.contextlogger.contextprovider.javaee.TraceeJmsErrorMessageListener;
+
+@MessageDriven(activationConfig = { @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
+    @ActivationConfigProperty(propertyName = "destination", propertyValue = "exampleQueue") })
+@Interceptors({ TraceeMessageListener.class, TraceeJmsErrorMessageListener.class })
 public class MessageQueueListener implements MessageListener {
 
-	private static final Logger LOG = LoggerFactory.getLogger(MessageQueueListener.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MessageQueueListener.class);
 
-	@Override
-	public void onMessage(Message message) {
-		LOG.info("I just received the message \"{}\" on javaee/exampleQueue", message);
-	}
+    @Override
+    public void onMessage(Message message) {
+        LOG.info("I just received the message \"{}\" on javaee/exampleQueue", message);
+    }
 
 }

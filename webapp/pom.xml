@@ -130,18 +130,18 @@
 		</dependency>
 
         <dependency>
-            <groupId>io.tracee.contextlogger</groupId>
-			<artifactId>http-connector</artifactId>
+            <groupId>io.tracee.contextlogger.connector</groupId>
+			<artifactId>connector-http</artifactId>
         </dependency>
 
         <dependency>
             <groupId>io.tracee.contextlogger</groupId>
-            <artifactId>contextlogger-impl</artifactId>
+            <artifactId>contextlogger-core</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>io.tracee.contextlogger</groupId>
-            <artifactId>contextlogger-servlet</artifactId>
+            <groupId>io.tracee.contextlogger.contextprovider</groupId>
+            <artifactId>contextprovider-servlet</artifactId>
         </dependency>
 
         <dependency>

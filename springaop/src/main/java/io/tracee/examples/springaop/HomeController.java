@@ -1,7 +1,7 @@
 package io.tracee.examples.springaop;
 
-import io.tracee.Tracee;
-import io.tracee.contextlogger.watchdog.Watchdog;
+import java.util.Random;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.Random;
+import io.tracee.Tracee;
+import io.tracee.contextlogger.contextprovider.aspectj.Watchdog;
 
 /**
  * Example Spring-MVC Controller.
@@ -90,10 +91,11 @@ public class HomeController {
         return "home";
     }
 
-
     /**
-     * Using a watchdog annotation only works if the method is invoked via a spring bean proxy. Therefore this will not work if the method is used directly via this.multiply().
-     * To make this work you have to invoke the method by using the current proxy. You can do this by invoking ((HomeController) AopContext.currentProxy()).multiply()
+     * Using a watchdog annotation only works if the method is invoked via a spring bean proxy. Therefore this will not work if the method is used directly via
+     * this.multiply().
+     * To make this work you have to invoke the method by using the current proxy. You can do this by invoking ((HomeController)
+     * AopContext.currentProxy()).multiply()
      *
      * @param a first parameter
      * @param b second parameter

@@ -30,7 +30,7 @@
 	<properties>
 		<!-- TracEE Version -->
 		<tracee.version>0.8.0</tracee.version>
-		<tracee.contextlogger.version>0.6.0</tracee.contextlogger.version>
+		<tracee.contextlogger.version>0.7.0</tracee.contextlogger.version>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
@@ -223,37 +223,37 @@
 			</dependency>
 
 			<dependency>
-				<groupId>io.tracee.contextlogger</groupId>
-				<artifactId>contextlogger-javaee</artifactId>
+				<groupId>io.tracee.contextlogger.contextprovider</groupId>
+				<artifactId>contextprovider-javaee</artifactId>
+				<version>${tracee.contextlogger.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.tracee.contextlogger.connector</groupId>
+				<artifactId>connector-http</artifactId>
 				<version>${tracee.contextlogger.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>io.tracee.contextlogger</groupId>
-				<artifactId>http-connector</artifactId>
+				<artifactId>contextlogger-core</artifactId>
 				<version>${tracee.contextlogger.version}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>io.tracee.contextlogger</groupId>
-				<artifactId>contextlogger-impl</artifactId>
+				<groupId>io.tracee.contextlogger.contextprovider</groupId>
+				<artifactId>contextprovider-servlet</artifactId>
 				<version>${tracee.contextlogger.version}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>io.tracee.contextlogger</groupId>
-				<artifactId>contextlogger-servlet</artifactId>
-				<version>${tracee.contextlogger.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>io.tracee.contextlogger</groupId>
-				<artifactId>contextlogger-watchdog</artifactId>
+				<groupId>io.tracee.contextlogger.contextprovider</groupId>
+				<artifactId>contextprovider-aspectj</artifactId>
 				<version>${tracee.contextlogger.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>io.tracee.contextlogger</groupId>
-				<artifactId>contextlogger-jaxws</artifactId>
+				<groupId>io.tracee.contextlogger.contextprovider</groupId>
+				<artifactId>contextprovider-jaxws</artifactId>
 				<version>${tracee.contextlogger.version}</version>
 			</dependency>
 

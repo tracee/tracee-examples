@@ -6,8 +6,8 @@ import javax.interceptor.Interceptors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import io.tracee.contextlogger.javaee.TraceeErrorContextLoggingInterceptor;
-import io.tracee.contextlogger.watchdog.Watchdog;
+import io.tracee.contextlogger.contextprovider.aspectj.Watchdog;
+import io.tracee.contextlogger.contextprovider.javaee.TraceeErrorContextLoggingInterceptor;
 
 @Stateless
 public class TestEjbImpl implements TestEjb {
