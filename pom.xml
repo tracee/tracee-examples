@@ -29,7 +29,7 @@
 
 	<properties>
 		<!-- TracEE Version -->
-		<tracee.version>0.8.0</tracee.version>
+		<tracee.version>0.9.0</tracee.version>
 		<tracee.contextlogger.version>0.7.0</tracee.contextlogger.version>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
