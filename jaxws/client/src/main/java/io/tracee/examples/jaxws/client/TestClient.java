@@ -34,15 +34,15 @@ public final class TestClient {
         final int a = 2;
         final int b = 3;
 
-        traceeBackend.remove(TraceeConstants.REQUEST_ID_KEY);
-        MDC.remove(TraceeConstants.REQUEST_ID_KEY);
+        traceeBackend.remove(TraceeConstants.INVOCATION_ID_KEY);
+        MDC.remove(TraceeConstants.INVOCATION_ID_KEY);
 
         traceeLogger.info("WS CALL WITH NONEXISTING REQUEST_ID : " + a + "+" + b + "=" + ws.sum(a, b));
 
-        traceeBackend.put(TraceeConstants.REQUEST_ID_KEY, "XYX");
+        traceeBackend.put(TraceeConstants.INVOCATION_ID_KEY, "XYX");
         traceeLogger.info("WS CALL WITH EXISTING REQUEST_ID : " + a + "+" + b + "=" + ws.sum(a, b));
-        traceeBackend.remove(TraceeConstants.REQUEST_ID_KEY);
-        MDC.remove(TraceeConstants.REQUEST_ID_KEY);
+        traceeBackend.remove(TraceeConstants.INVOCATION_ID_KEY);
+        MDC.remove(TraceeConstants.INVOCATION_ID_KEY);
 
         /*
          * try {

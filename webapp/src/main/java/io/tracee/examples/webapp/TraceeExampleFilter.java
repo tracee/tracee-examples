@@ -27,11 +27,11 @@ public class TraceeExampleFilter implements Filter {
 			filterChain.doFilter(servletRequest, servletResponse);
 		} catch (Exception e) {
 
-			Tracee.getBackend().get(TraceeConstants.REQUEST_ID_KEY);
+			Tracee.getBackend().get(TraceeConstants.INVOCATION_ID_KEY);
 
 			// try to send redirect
 			HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
-			httpServletResponse.sendRedirect("index.jsf?showError=true&rid=" + Tracee.getBackend().get(TraceeConstants.REQUEST_ID_KEY));
+			httpServletResponse.sendRedirect("index.jsf?showError=true&rid=" + Tracee.getBackend().get(TraceeConstants.INVOCATION_ID_KEY));
 
 		}
 
