@@ -9,8 +9,6 @@ import io.tracee.Tracee;
 import io.tracee.TraceeBackend;
 import io.tracee.TraceeConstants;
 import io.tracee.TraceeLogger;
-import io.tracee.binding.jaxws.TraceeClientHandler;
-import io.tracee.contextlogger.contextprovider.jaxws.TraceeClientHandlerResolver;
 import io.tracee.examples.jaxws.client.testclient.TraceeJaxWsTestService;
 import io.tracee.examples.jaxws.client.testclient.TraceeJaxWsTestWS;
 
@@ -27,7 +25,7 @@ public final class TestClient {
 
         final TraceeJaxWsTestService testWebservice = new TraceeJaxWsTestService(new URL(
                 "http://localhost:8080/traceeJaxwsTestService/webservices/TraceeJaxWsTestService?wsdl"));
-        testWebservice.setHandlerResolver(TraceeClientHandlerResolver.buildHandlerResolver().add(TraceeClientHandler.class).build());
+        //testWebservice.setHandlerResolver(new TraceeClientHandlerResolver().getHandlerChain().add(TraceeClientHandler.class).build());
 
         final TraceeJaxWsTestWS ws = testWebservice.getPort(TraceeJaxWsTestWS.class);
 
