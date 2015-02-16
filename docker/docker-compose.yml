@@ -4,7 +4,7 @@ tomcat7:
   ports:
     - "8080:8080"
   links:
-    - graylogServer:graylog
+    - graylogserver:graylog
     - jbossas7:jbossas7
   mem_limit: 128m
 
@@ -15,32 +15,31 @@ jbossas7:
     - "8081:8080"
     - "9990:9990"
   links:
-    - graylogServer:graylog
+    - graylogserver:graylog
   mem_limit: 256m
 
-graylogServer:
+graylogserver:
   build: graylog/server
   hostname: graylogServer
   links:
-   - graylogMongodb:mongo
-   - graylogElasticsearch:elasticsearch
+   - graylogmongodb:mongo
+   - elasticsearch:elasticsearch
   ports:
    - "12900:12900"
 
-graylogWeb:
+graylogweb:
   build: graylog/web
-  hostname: graylogWeb
+  hostname: graylogweb
   links:
-   - graylogServer:graylog
+   - graylogserver:graylog
   ports:
    - "9000:9000"
 
-graylogMongodb:
+graylogmongodb:
   build: graylog/mongodb
-  hostname: graylogMongodb
+  hostname: graylogmongodb
   mem_limit: 128m
 
-graylogElasticsearch:
-  build: graylogElasticsearch
-  hostname: graylogElasticsearch
-
+elasticsearch:
+  build: elasticsearch
+  hostname: elasticsearch
