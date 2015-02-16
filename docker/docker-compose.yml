@@ -20,7 +20,7 @@ jbossas7:
 
 graylogserver:
   build: graylog/server
-  hostname: graylogServer
+  hostname: graylogserver
   links:
    - graylogmongodb:mongo
    - elasticsearch:elasticsearch
