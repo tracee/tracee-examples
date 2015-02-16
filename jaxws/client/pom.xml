@@ -77,9 +77,5 @@
 			<artifactId>tracee-jaxws</artifactId>
 		</dependency>
 
-        <dependency>
-            <groupId>io.tracee.contextlogger.contextprovider</groupId>
-            <artifactId>contextprovider-jaxws</artifactId>
-        </dependency>
     </dependencies>
 </project>

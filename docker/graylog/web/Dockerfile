@@ -2,7 +2,7 @@
 #
 # VERSION       1.0
 
-FROM dockerfile/java:openjdk-6-jre
+FROM dockerfile/java:openjdk-7-jre
 MAINTAINER Daniel Wegener "daniel.wegener@holisticon.de"
 
 ENV GLW_PKG_NAME graylog2-web-interface-0.92.0

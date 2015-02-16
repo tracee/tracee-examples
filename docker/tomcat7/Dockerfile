@@ -54,7 +54,7 @@ ADD tomcat-users.xml $CATALINA_HOME/conf/
 EXPOSE 8000 8080
 
 ENTRYPOINT export CATALINA_OPTS="$CATALINA_OPTS -Xms128m -Xmx256m -DGRAYLOG_UDP_ADDR=$GRAYLOG_PORT_12201_UDP_ADDR -DGRAYLOG_UDP_PORT=$GRAYLOG_PORT_12201_UDP_PORT" \
-# && env \
+&& env \
 # && ifconfig \
  && /apache-tomcat/bin/catalina.sh run
 
