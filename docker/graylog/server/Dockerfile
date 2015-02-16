@@ -2,7 +2,7 @@
 #
 # VERSION       1.0
 
-FROM dockerfile/java
+FROM dockerfile/java:openjdk-6-jre
 MAINTAINER Daniel Wegener "daniel.wegener@holisticon.de"
 
 ENV GL_PKG_NAME graylog2-server-0.92.0

@@ -16,7 +16,7 @@ jbossas7:
     - "9990:9990"
   links:
     - graylogServer:graylog
-  mem_limit: 128m
+  mem_limit: 256m
 
 graylogServer:
   build: graylog/server
@@ -40,7 +40,7 @@ graylogMongodb:
   hostname: graylogMongodb
   mem_limit: 128m
 
-
 graylogElasticsearch:
-  build: graylog/elasticsearch
+  build: graylogElasticsearch
   hostname: graylogElasticsearch
+

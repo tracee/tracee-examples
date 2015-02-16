@@ -2,7 +2,7 @@
 #
 # VERSION       1.0
 
-FROM dockerfile/java
+FROM dockerfile/java:openjdk-6-jre
 MAINTAINER Daniel Wegener "daniel.wegener@holisticon.de"
 
 ENV DEBIAN_FRONTEND noninteractive
