@@ -38,7 +38,7 @@
 	</bean>
 
 	<mvc:interceptors>
-		<bean class="io.tracee.springmvc.TraceeInterceptor">
+		<bean class="io.tracee.binding.springmvc.TraceeInterceptor">
 			<property name="profileName" value="default" />
 		</bean>
 	</mvc:interceptors>
