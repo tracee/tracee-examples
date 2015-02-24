@@ -98,15 +98,15 @@
 				<level name="INFO" />
 				<properties>
 					<property name="level" value="INFO" />
-					<property name="host" value="udp:GRAYLOG_PORT_12201_UDP_ADDR" />
-					<property name="port" value="GRAYLOG_PORT_12201_UDP_PORT" />
+					<property name="host" value="LOGSTASH_PORT_12201_UDP_ADDR" />
+					<property name="port" value="LOGSTASH_PORT_12201_UDP_PORT" />
+                    <property name="version" value="1.0" />
 					<property name="facility" value="java-test" />
 					<property name="extractStackTrace" value="true" />
 					<property name="filterStackTrace" value="true" />
 					<property name="timestampPattern" value="yyyy-MM-dd HH:mm:ss,SSSS" />
 					<property name="maximumMessageSize" value="8192" />
-					<!--<property name="includeFullMDC" value="true" />-->
-					<property name="mdcFields" value="traceeRequestId,traceeSessionId" />
+					<property name="includeFullMDC" value="true" />
 				</properties>
 			</custom-handler>
         </subsystem>

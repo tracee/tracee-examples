@@ -72,6 +72,13 @@
 									<type>war</type>
 									<outputDirectory>${project.basedir}/tomcat7</outputDirectory>
 								</artifactItem>
+                                <artifactItem>
+                                    <groupId>io.tracee.examples</groupId>
+                                    <artifactId>tracee-examples-webapp</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>war</type>
+                                    <outputDirectory>${project.basedir}/tomcat7</outputDirectory>
+                                </artifactItem>
 								<artifactItem>
 									<groupId>io.tracee.examples</groupId>
 									<artifactId>tracee-examples-ear</artifactId>

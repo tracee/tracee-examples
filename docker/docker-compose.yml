@@ -4,7 +4,7 @@ tomcat7:
   ports:
     - "8080:8080"
   links:
-    - graylogserver:graylog
+    - logstash:logstash
     - jbossas7:jbossas7
   mem_limit: 128m
 
@@ -15,31 +15,27 @@ jbossas7:
     - "8081:8080"
     - "9990:9990"
   links:
-    - graylogserver:graylog
+    - logstash:logstash
   mem_limit: 256m
 
-graylogserver:
-  build: graylog/server
-  hostname: graylogserver
-  links:
-   - graylogmongodb:mongo
-   - elasticsearch:elasticsearch
-  ports:
-   - "12900:12900"
-
-graylogweb:
-  build: graylog/web
-  hostname: graylogweb
-  links:
-   - graylogserver:graylog
-  ports:
-   - "9000:9000"
-
-graylogmongodb:
-  build: graylog/mongodb
-  hostname: graylogmongodb
-  mem_limit: 128m
-
 elasticsearch:
-  build: elasticsearch
-  hostname: elasticsearch
+  image: deviantony/elk-elasticsearch
+  ports:
+    - "9200:9200"
+logstash:
+  image: deviantony/elk-logstash
+  volumes:
+    - logstash-conf:/etc/logstash/conf.d
+  ports:
+    - "514/udp"
+    - "514/tcp"
+    - "12201/udp"
+    - "12201/tcp"
+  links:
+    - elasticsearch
+kibana4:
+  image: deviantony/elk-kibana
+  ports:
+    - "5601:5601"
+  links:
+    - elasticsearch

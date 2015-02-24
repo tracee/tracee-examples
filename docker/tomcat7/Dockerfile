@@ -30,12 +30,17 @@ ADD http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6.jar 
 ADD http://repo1.maven.org/maven2/org/slf4j/jul-to-slf4j/1.6.6/jul-to-slf4j-1.6.6.jar $CATALINA_HOME/lib/
 ADD http://repo1.maven.org/maven2/org/slf4j/log4j-over-slf4j/1.6.6/log4j-over-slf4j-1.6.6.jar $CATALINA_HOME/lib/
 ADD http://repo1.maven.org/maven2/org/slf4j/jcl-over-slf4j/1.6.6/jcl-over-slf4j-1.6.6.jar $CATALINA_HOME/lib/
-ADD http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/0.9.30/logback-classic-0.9.30.jar $CATALINA_HOME/lib/
-ADD http://repo1.maven.org/maven2/ch/qos/logback/logback-core/0.9.30/logback-core-0.9.30.jar $CATALINA_HOME/lib/
+ADD http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.1.2/logback-classic-1.1.2.jar $CATALINA_HOME/lib/
+ADD http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.jar $CATALINA_HOME/lib/
 
-# Add logstash gelf appender
-ADD http://repo1.maven.org/maven2/biz/paluch/logging/logstash-gelf/1.5.4/logstash-gelf-1.5.4.jar $CATALINA_HOME/lib/
-ADD http://repo1.maven.org/maven2/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar $CATALINA_HOME/lib/
+# Add logback logstash appender
+ADD http://repo1.maven.org/maven2/net/logstash/logback/logstash-logback-encoder/4.2/logstash-logback-encoder-4.2.jar $CATALINA_HOME/lib/
+ADD http://repo1.maven.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.jar $CATALINA_HOME/lib/
+ADD http://repo1.maven.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar $CATALINA_HOME/lib/
+ADD http://repo1.maven.org/maven2/com/lmax/disruptor/3.3.0/disruptor-3.3.0.jar $CATALINA_HOME/lib/
+ADD http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.0/jackson-databind-2.4.0.jar $CATALINA_HOME/lib/
+ADD http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/jackson-core-2.4.0.jar $CATALINA_HOME/lib/
+ADD http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/jackson-annotations-2.4.0.jar $CATALINA_HOME/lib/
 
 # Add jax-rs 2 api
 ADD http://repo1.maven.org/maven2/javax/ws/rs/javax.ws.rs-api/2.0/javax.ws.rs-api-2.0.jar $CATALINA_HOME/lib/
@@ -53,11 +58,12 @@ ADD tomcat-users.xml $CATALINA_HOME/conf/
 
 EXPOSE 8000 8080
 
-ENTRYPOINT export CATALINA_OPTS="$CATALINA_OPTS -Xms128m -Xmx256m -DGRAYLOG_UDP_ADDR=$GRAYLOG_PORT_12201_UDP_ADDR -DGRAYLOG_UDP_PORT=$GRAYLOG_PORT_12201_UDP_PORT" \
+ENTRYPOINT export CATALINA_OPTS="$CATALINA_OPTS -Xms128m -Xmx256m -DLOGSTASH_SYSLOG_ADDR=$GRAYLOG_PORT_12201_UDP_ADDR -DLOGSTASH_SYSLOG_PORT=$LOGSTASH_PORT_12201_UDP_PORT" \
 && env \
 # && ifconfig \
  && /apache-tomcat/bin/catalina.sh run
 
 # Download and install latest tracee snapshot artifacts
-ADD tracee-examples-springmvc.war $CATALINA_HOME/webapps/tracee-examples-springmvc.war
-ADD tracee-examples-jaxrs2.war $CATALINA_HOME/webapps/tracee-examples-jaxrs2.war
+ADD tracee-examples-springmvc.war $CATALINA_HOME/webapps/springmvc.war
+ADD tracee-examples-jaxrs2.war $CATALINA_HOME/webapps/jaxrs2.war
+ADD tracee-examples-webapp.war $CATALINA_HOME/webapps/webapp.war

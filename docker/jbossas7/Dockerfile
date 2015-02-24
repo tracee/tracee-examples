@@ -16,10 +16,10 @@ RUN cd / &&  wget -q http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/
 ENV JBOSS_HOME /jboss-as
 
 # Download logstash-gelf-logging as jboss7 module (see https://github.com/mp911de/logstash-gelf#jboss-7-configuration)
-ADD http://repo1.maven.org/maven2/biz/paluch/logging/logstash-gelf/1.5.4/logstash-gelf-1.5.4-logging-module.zip /
-RUN unzip /logstash-gelf-1.5.4-logging-module.zip -d / \
-  && mv /logstash-gelf-1.5.4/* /jboss-as/modules \
-  && rm -rf /logstash-gelf-1.5.4*
+ADD http://repo1.maven.org/maven2/biz/paluch/logging/logstash-gelf/1.6.0/logstash-gelf-1.6.0-logging-module.zip /
+RUN unzip /logstash-gelf-1.6.0-logging-module.zip -d / \
+  && mv /logstash-gelf-1.6.0/* /jboss-as/modules \
+  && rm -rf /logstash-gelf-1.6.0*
 
 
 ADD standalone-full.xml $JBOSS_HOME/standalone/configuration/
@@ -32,8 +32,10 @@ EXPOSE 8080 9990 9999
 
 ENTRYPOINT env \
 # && ifconfig \
-  && sed -i "s/GRAYLOG_PORT_12201_UDP_PORT/$GRAYLOG_PORT_12201_UDP_PORT/g" "/jboss-as/standalone/configuration/standalone-full.xml" \
-  && sed -i "s/GRAYLOG_PORT_12201_UDP_ADDR/$GRAYLOG_PORT_12201_UDP_ADDR/g" "/jboss-as/standalone/configuration/standalone-full.xml" \
+  && sed -i "s/LOGSTASH_PORT_12201_TCP_ADDR/$LOGSTASH_PORT_12201_TCP_ADDR/g" "/jboss-as/standalone/configuration/standalone-full.xml" \
+  && sed -i "s/LOGSTASH_PORT_12201_TCP_PORT/$LOGSTASH_PORT_12201_TCP_PORT/g" "/jboss-as/standalone/configuration/standalone-full.xml" \
+  && sed -i "s/LOGSTASH_PORT_12201_UDP_ADDR/$LOGSTASH_PORT_12201_UDP_ADDR/g" "/jboss-as/standalone/configuration/standalone-full.xml" \
+  && sed -i "s/LOGSTASH_PORT_12201_UDP_PORT/$LOGSTASH_PORT_12201_UDP_PORT/g" "/jboss-as/standalone/configuration/standalone-full.xml" \
   && $JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0
 
 # Download and install latest tracee snapshot artifacts
