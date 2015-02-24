@@ -17,9 +17,9 @@ deploys tracee-examples-webap and tracee-examples-ear into these containers.
 
 After starting all services, you may browse the following web endpoints:
 
- * [http://localhost:8080/](http://localhost:8080/tracee-examples-webapp) - tracee-examples-webapp on tomcat7
- * [http://localhost:8080/](http://localhost:8080/tracee-examples-jaxrs2) - tracee-examples-jaxrs2 on tomcat7
- * [http://localhost:8080/](http://localhost:8080/tracee-examples-springmvc/token) - tracee-examples-springmvc on tomcat7
+ * [http://localhost:8080/tracee-examples-webapp](http://localhost:8080/tracee-examples-webapp) - tracee-examples-webapp on tomcat7
+ * [http://localhost:8080/tracee-examples-jaxrs2](http://localhost:8080/tracee-examples-jaxrs2) - tracee-examples-jaxrs2 on tomcat7
+ * [http://localhost:8080/tracee-examples-springmvc](http://localhost:8080/tracee-examples-springmvc) - tracee-examples-springmvc on tomcat7
  * [http://localhost:8081/](http://localhost:8081/) - jbossas7
  * [http://localhost:9990/](http://localhost:9990/) - jbossas7 - management interface
 

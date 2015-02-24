@@ -64,6 +64,6 @@ ENTRYPOINT export CATALINA_OPTS="$CATALINA_OPTS -Xms128m -Xmx256m -DLOGSTASH_SYS
  && /apache-tomcat/bin/catalina.sh run
 
 # Download and install latest tracee snapshot artifacts
-ADD tracee-examples-springmvc.war $CATALINA_HOME/webapps/springmvc.war
-ADD tracee-examples-jaxrs2.war $CATALINA_HOME/webapps/jaxrs2.war
-ADD tracee-examples-webapp.war $CATALINA_HOME/webapps/webapp.war
+ADD tracee-examples-springmvc.war $CATALINA_HOME/webapps/tracee-examples-springmvc.war
+ADD tracee-examples-jaxrs2.war $CATALINA_HOME/webapps/tracee-examples-jaxrs2.war
+ADD tracee-examples-webapp.war $CATALINA_HOME/webapps/tracee-examples-webapp.war
