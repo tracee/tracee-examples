@@ -5,7 +5,7 @@
 This folder contains Dockerfiles and a `docker-compose.yml` descriptor for tracee-examples. It starts a preconfigured tomcat7, jbossas7 + ELK-Stack and
 deploys tracee-examples-webap and tracee-examples-ear into these containers.
 
-![overview](docker.svg?raw=true)
+![overview](docker.png?raw=true)
 
 ### Start the enviroment
 
