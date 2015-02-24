@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration>
 
-<configuration debug="true">
+<configuration>
 	<jmxConfigurator/>
 	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator"/>
 
