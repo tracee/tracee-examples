@@ -34,7 +34,7 @@ logstash:
   links:
     - elasticsearch
 kibana4:
-  image: deviantony/elk-kibana
+  build: docker-elk-kibana
   ports:
     - "5601:5601"
   links:
