@@ -1,4 +1,4 @@
-FROM deviantony/elk-elasticsearch:latest
+FROM deviantony/elk-kibana:latest
 
 MAINTAINER Daniel Wegener "daniel.wegener@holisticon.de"
 ADD conf/kibana.yml /opt/kibana/config/kibana.yml
