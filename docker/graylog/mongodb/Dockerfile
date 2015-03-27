@@ -2,7 +2,7 @@
 #
 # VERSION       1.0
 
-FROM dockerfile/mongodb
+FROM mongodb
 MAINTAINER Daniel Wegener "daniel.wegener@holisticon.de"
 
 CMD ["mongod","--smallfiles", "--rest", "--noprealloc"]

@@ -2,7 +2,7 @@
 #
 # VERSION       1.0
 
-FROM dockerfile/elasticsearch
+FROM elasticsearch
 MAINTAINER Daniel Wegener "daniel.wegener@holisticon.de"
 
 ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml

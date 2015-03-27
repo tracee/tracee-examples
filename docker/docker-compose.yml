@@ -6,7 +6,7 @@ tomcat7:
   links:
     - logstash:logstash
     - jbossas7:jbossas7
-  mem_limit: 128m
+  mem_limit: 256m
 
 jbossas7:
   build: jbossas7
@@ -33,6 +33,7 @@ logstash:
     - "12201/tcp"
   links:
     - elasticsearch
+  mem_limit: 256m
 kibana4:
   build: docker-elk-kibana
   ports:
