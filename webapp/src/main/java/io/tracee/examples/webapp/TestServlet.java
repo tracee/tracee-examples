@@ -1,6 +1,7 @@
 package io.tracee.examples.webapp;
 
-import io.tracee.Tracee;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,11 +14,12 @@ import java.util.Scanner;
 
 @WebServlet(name = "test", urlPatterns = {"/abc"})
 public class TestServlet extends HttpServlet {
+
+	private static final Logger LOG = LoggerFactory.getLogger(TestServlet.class);
+
     @Override
     protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
-
-
-        Tracee.getBackend().getLoggerFactory().getLogger(TestServlet.class).info(extractPostRequestBody(httpServletRequest));
+		LOG.info(extractPostRequestBody(httpServletRequest));
     }
 
     static String extractPostRequestBody(HttpServletRequest request) throws IOException {

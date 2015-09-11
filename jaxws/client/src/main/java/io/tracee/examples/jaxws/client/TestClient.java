@@ -3,16 +3,19 @@ package io.tracee.examples.jaxws.client;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 
 import io.tracee.Tracee;
 import io.tracee.TraceeBackend;
 import io.tracee.TraceeConstants;
-import io.tracee.TraceeLogger;
 import io.tracee.examples.jaxws.client.testclient.TraceeJaxWsTestService;
 import io.tracee.examples.jaxws.client.testclient.TraceeJaxWsTestWS;
 
 public final class TestClient {
+
+	public static final Logger LOG = LoggerFactory.getLogger(TestClient.class);
 
     private TestClient() {
 
@@ -21,7 +24,6 @@ public final class TestClient {
     public static void main(final String[] args) throws MalformedURLException {
 
         final TraceeBackend traceeBackend = Tracee.getBackend();
-        final TraceeLogger traceeLogger = traceeBackend.getLoggerFactory().getLogger(TestClient.class);
 
         final TraceeJaxWsTestService testWebservice = new TraceeJaxWsTestService(new URL(
                 "http://localhost:8080/traceeJaxwsTestService/webservices/TraceeJaxWsTestService?wsdl"));
@@ -35,10 +37,10 @@ public final class TestClient {
         traceeBackend.remove(TraceeConstants.INVOCATION_ID_KEY);
         MDC.remove(TraceeConstants.INVOCATION_ID_KEY);
 
-        traceeLogger.info("WS CALL WITH NONEXISTING REQUEST_ID : " + a + "+" + b + "=" + ws.sum(a, b));
+        LOG.info("WS CALL WITH NONEXISTING REQUEST_ID : " + a + "+" + b + "=" + ws.sum(a, b));
 
         traceeBackend.put(TraceeConstants.INVOCATION_ID_KEY, "XYX");
-        traceeLogger.info("WS CALL WITH EXISTING REQUEST_ID : " + a + "+" + b + "=" + ws.sum(a, b));
+		LOG.info("WS CALL WITH EXISTING REQUEST_ID : " + a + "+" + b + "=" + ws.sum(a, b));
         traceeBackend.remove(TraceeConstants.INVOCATION_ID_KEY);
         MDC.remove(TraceeConstants.INVOCATION_ID_KEY);
 

@@ -29,7 +29,7 @@
 
 	<properties>
 		<!-- TracEE Version -->
-		<tracee.version>0.10.0</tracee.version>
+		<tracee.version>1.1.0</tracee.version>
 		<tracee.contextlogger.version>0.8.0</tracee.contextlogger.version>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -162,6 +162,11 @@
 			<!-- internal dependencies-->
 			<dependency>
 				<groupId>io.tracee.examples</groupId>
+				<artifactId>tracee-examples-jaxws-service-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.tracee.examples</groupId>
 				<artifactId>tracee-examples-jaxws-client</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -183,12 +188,6 @@
 			<dependency>
 				<groupId>io.tracee</groupId>
 				<artifactId>tracee-api</artifactId>
-				<version>${tracee.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>io.tracee.backend</groupId>
-				<artifactId>tracee-slf4j</artifactId>
 				<version>${tracee.version}</version>
 			</dependency>
 

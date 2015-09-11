@@ -78,10 +78,6 @@
             <artifactId>tracee-api</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>io.tracee.backend</groupId>
-            <artifactId>tracee-slf4j</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>io.tracee.binding</groupId>

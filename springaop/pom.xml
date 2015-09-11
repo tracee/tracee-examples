@@ -114,11 +114,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>io.tracee.backend</groupId>
-			<artifactId>tracee-slf4j</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>io.tracee.binding</groupId>
 			<artifactId>tracee-springmvc</artifactId>
 		</dependency>

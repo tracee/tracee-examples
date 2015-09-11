@@ -64,6 +64,11 @@
 		<!-- internal dependencies -->
 		<dependency>
 			<groupId>io.tracee.examples</groupId>
+			<artifactId>tracee-examples-jaxws-service-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.tracee.examples</groupId>
 			<artifactId>tracee-examples-jms-api</artifactId>
 		</dependency>
 
@@ -72,11 +77,6 @@
 			<groupId>io.tracee</groupId>
 			<artifactId>tracee-api</artifactId>
 		</dependency>
-
-        <dependency>
-            <groupId>io.tracee.backend</groupId>
-            <artifactId>tracee-slf4j</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>io.tracee.contextlogger.contextprovider</groupId>
