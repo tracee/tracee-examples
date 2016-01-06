@@ -8,7 +8,7 @@ import org.junit.Test;
 import java.util.Calendar;
 
 /**
- * @Test class for {@link io.tracee.examples.webapp.logaccess.LogMessageProvider}.
+ * @see class for {@link io.tracee.examples.webapp.logaccess.LogMessageProvider}.
  */
 public class LogMessageProviderTest {
 
@@ -61,7 +61,4 @@ public class LogMessageProviderTest {
 		logMessageProvider.getTimestamp(givenTimestampStr);
 
 	}
-
-
-
 }
