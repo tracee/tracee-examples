@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV JBOSS_PKG jboss-as-7.1.1.Final
 
 # Download and install JBoss 7
-RUN cd / &&  wget -q http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/$JBOSS_PKG.tar.gz \
+RUN cd / &&  wget  http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/$JBOSS_PKG.tar.gz \
   &&  tar -xf $JBOSS_PKG.tar.gz && rm $JBOSS_PKG.tar.gz \
   &&  mv $JBOSS_PKG jboss-as
 
@@ -28,15 +28,9 @@ ADD standalone.conf $JBOSS_HOME/bin/
 # Add management user to jboss7
 RUN $JBOSS_HOME/bin/add-user.sh admin yummie --silent=true
 
-EXPOSE 8080 9990 9999
-
-ENTRYPOINT env \
-# && ifconfig \
-  && sed -i "s/LOGSTASH_PORT_12201_TCP_ADDR/$LOGSTASH_PORT_12201_TCP_ADDR/g" "/jboss-as/standalone/configuration/standalone-full.xml" \
-  && sed -i "s/LOGSTASH_PORT_12201_TCP_PORT/$LOGSTASH_PORT_12201_TCP_PORT/g" "/jboss-as/standalone/configuration/standalone-full.xml" \
-  && sed -i "s/LOGSTASH_PORT_12201_UDP_ADDR/$LOGSTASH_PORT_12201_UDP_ADDR/g" "/jboss-as/standalone/configuration/standalone-full.xml" \
-  && sed -i "s/LOGSTASH_PORT_12201_UDP_PORT/$LOGSTASH_PORT_12201_UDP_PORT/g" "/jboss-as/standalone/configuration/standalone-full.xml" \
-  && $JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0
-
 # Download and install latest tracee snapshot artifacts
 ADD tracee-examples-ear.ear $JBOSS_HOME/standalone/deployments/tracee-examples.ear
+
+EXPOSE 8080 9990 9999 8787
+
+ENTRYPOINT env && $JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0

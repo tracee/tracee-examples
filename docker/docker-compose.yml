@@ -1,42 +1,48 @@
-tomcat7:
-  build: tomcat7
-  hostname: tomcat7
-  ports:
-    - "8080:8080"
-  links:
-    - logstash:logstash
-    - jbossas7:jbossas7
-  mem_limit: 256m
+version: '2'
+services:
+  tomcat7:
+    build: tomcat7
+    hostname: tomcat7
+    ports:
+      - "8080:8080"
+      - "8000:8000"
+    links:
+      - jbossas7:backend
+      - logstash
+    mem_limit: 256m
 
-jbossas7:
-  build: jbossas7
-  hostname: jbossas7
-  ports:
-    - "8081:8080"
-    - "9990:9990"
-  links:
-    - logstash:logstash
-  mem_limit: 256m
+  jbossas7:
+    build: jbossas7
+    hostname: jbossas7
+    ports:
+      - "8081:8080"
+      - "9990:9990"
+      - "8787:8787"
+    links:
+      - logstash
+    mem_limit: 256m
 
-elasticsearch:
-  image: deviantony/elk-elasticsearch
-  ports:
-    - "9200:9200"
-logstash:
-  image: deviantony/elk-logstash
-  volumes:
-    - logstash-conf:/etc/logstash/conf.d
-  ports:
-    - "514/udp"
-    - "514/tcp"
-    - "12201/udp"
-    - "12201/tcp"
-  links:
-    - elasticsearch
-  mem_limit: 256m
-kibana4:
-  build: docker-elk-kibana
-  ports:
-    - "5601:5601"
-  links:
-    - elasticsearch
+  logstash:
+    image: deviantony/elk-logstash
+    volumes:
+      - ./logstash-conf:/etc/logstash/conf.d:ro
+    ports:
+      - "514/udp"
+      - "514/tcp"
+      - "12201/udp"
+      - "12201/tcp"
+    links:
+      - elasticsearch
+
+  elasticsearch:
+    image: deviantony/elk-elasticsearch:latest
+    ports:
+      - "9200:9200"
+
+  kibana:
+    build: docker-elk-kibana
+    ports:
+      - "5601:5601"
+    links:
+      - elasticsearch
+    mem_limit: 256m

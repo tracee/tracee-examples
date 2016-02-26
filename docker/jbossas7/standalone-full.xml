@@ -61,17 +61,9 @@
             <console-handler name="CONSOLE">
                 <level name="INFO"/>
                 <formatter>
-                    <pattern-formatter pattern="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %X{traceeRequestId} %s%E%n"/>
+                    <pattern-formatter pattern="%d{HH:mm:ss.SSS} [%t] %-5p %c %X{TPIC.invocationId} %s%E%n"/>
                 </formatter>
             </console-handler>
-            <periodic-rotating-file-handler name="FILE">
-                <formatter>
-                    <pattern-formatter pattern="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n"/>
-                </formatter>
-                <file relative-to="jboss.server.log.dir" path="server.log"/>
-                <suffix value=".yyyy-MM-dd"/>
-                <append value="true"/>
-            </periodic-rotating-file-handler>
             <logger category="com.arjuna">
                 <level name="WARN"/>
             </logger>
@@ -98,15 +90,16 @@
 				<level name="INFO" />
 				<properties>
 					<property name="level" value="INFO" />
-					<property name="host" value="LOGSTASH_PORT_12201_UDP_ADDR" />
-					<property name="port" value="LOGSTASH_PORT_12201_UDP_PORT" />
+					<property name="host" value="logstash" />
+					<property name="port" value="12201" />
                     <property name="version" value="1.0" />
-					<property name="facility" value="java-test" />
+					<property name="facility" value="jbossas7" />
 					<property name="extractStackTrace" value="true" />
 					<property name="filterStackTrace" value="true" />
 					<property name="timestampPattern" value="yyyy-MM-dd HH:mm:ss,SSSS" />
 					<property name="maximumMessageSize" value="8192" />
-					<property name="includeFullMDC" value="true" />
+					<!--<property name="includeFullMDC" value="true" />-->
+					<property name="dynamicMdcFields" value="TPIC.*" />
 				</properties>
 			</custom-handler>
         </subsystem>
