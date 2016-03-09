@@ -2,9 +2,6 @@ package io.tracee.examples.ejb;
 
 import javax.ejb.Remote;
 
-/**
- * Created by Tobias Gindler, holisticon AG on 16.01.14.
- */
 @Remote
 public interface TestEjb {
 
